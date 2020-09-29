@@ -12,16 +12,32 @@
   font-size: 20px;
   line-height: 26px;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-content ion-toolbar {
+  --background: translucent;
 }
 
-#container a {
-  text-decoration: none;
+grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+h1 {
+
+  font-family: "Lucida Console", Courier, monospace;
+  text-align:center;
+}
+
+div {
+
+  font-weight: bold;
+  text-align:center;
+}
+
+#logo{
+  width: 180px;
+  top: 8px;
+  right: 16px;
+
 }

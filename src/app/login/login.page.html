@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+      <img src="../../../../assets/images/carschedule.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div>
+      <h1>Welcome!</h1>
+  <ion-list>
+   
+  
+    <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+
+ 
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+ 
+
+
+  </ion-list>
+
+
+  <ion-button fill="solid" expand="black" color="dark" (click)="login()">Login</ion-button><br><br>
+ 
+  <a href="/register">Sign Up</a><br><br>
+
+
+
+  <a href="/reset">Forgot Password?</a>
+</div>
+
+</ion-content>

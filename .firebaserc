@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "car-schedule-6d452": {
+      "hosting": {
+        "app": [
+          "car-schedule-6d452"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "car-schedule-6d452"
+  }
+}

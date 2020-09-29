@@ -17,6 +17,8 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
+  
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -25,3 +27,4 @@ export class AppComponent {
     });
   }
 }
+
