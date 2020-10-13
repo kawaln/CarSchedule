@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <a href="/home">
+        <img alt="Home" src="../../../../assets/images/carschedule.png" id="logo">
+     </a>
+    </ion-title>
+    <ion-button fill="solid" expand="black" color="dark" (click)="HomePage()">Home</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<h1>Appointment</h1><br>
+
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()" class="col s6">
+
+               <br>
+               <br>
+
+               <input id="date" type='date' (change)="selectChangeHandler($event)" min='2012-12-12' name="item.date" [(ngModel)]="item.date">
+
+               <br>
+ 
+               <br>
+               
+               <ion-item>
+                <ion-label>Time Available</ion-label>
+                <ion-select name="time" id="time" [(ngModel)]="item.time">   
+                  <ion-select-option *ngFor="let t of timeArray" [(value)]="t.time" required>
+                    {{t.time}}
+                </ion-select-option>   
+                </ion-select>
+               </ion-item>
+    
+                <!-- Drop off the User's Vehicle or not -->
+                <p>Drop Off Vehicle?</p>
+                <input type="radio" id="yes" name="drop" value="yes" [(ngModel)]="item.drop">
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="drop" value="no" [(ngModel)]="item.drop" required>
+                <label for="no">No</label><br>
+
+                <br><br>
+                <br>
+
+
+                 <ion-item>
+                  <ion-label>Vehicle Make</ion-label>
+                  <ion-select name="carmake" id="carmake" [(ngModel)]="item.carmake" (ionChange)="selectChangeCar($event)" >   
+                    <ion-select-option *ngFor="let c of carArray" [(value)]="c.carmake" required>
+                      {{c.carmake}}
+                  </ion-select-option>   
+                  </ion-select>
+                 </ion-item>
+                
+                 <br>
+
+                 <ion-item>
+                <ion-label>Vehicle Model</ion-label>
+                <ion-select name="carmodel" id="carmodel" [(ngModel)]="item.carmodel">     
+                  <ng-container *ngFor="let m of modelArray">
+                   <ion-select-option [(value)]="m.carmodel" *ngIf="m.id == selectedCarid" required>
+                     {{ m.carmodel }}
+                   </ion-select-option>
+                   </ng-container>
+                   </ion-select>
+                  </ion-item>
+
+                   <br>
+
+                   <ion-item>
+                    <ion-label>Vehicle Year</ion-label>
+                    <ion-select name="caryear" id="caryear" [(ngModel)]="item.caryear">   
+                      <ion-select-option *ngFor="let y of yearArray" [(value)]="y.caryear" required>
+                        {{y.caryear}}
+                    </ion-select-option>   
+                    </ion-select>
+                   </ion-item>
+
+                 <br><br>
+
+                <!--Types of issues of the car -->
+                <h4>Categories of Vehicle Issues</h4>
+                <div class="form-check" *ngFor="let c of categories">
+                    <input class="form-check-input" (change)="onChange(c.name, $event.target.checked)"name="{{ c.name }}" type="checkbox" id="{{c.name}}">
+                    <label class="form-check-label" for="{{c.name}}">
+                        {{c.name}}
+                    </label>
+                </div>    
+
+                <br>
+ 
+                <ion-item>
+                  <ion-textarea placeholder="Additional Information" [(ngModel)]="item.comment" name="comment"></ion-textarea>
+                </ion-item>
+
+
+                <br><br>
+
+                <label for="phone">Enter your phone number:</label><br><br>
+               <input type="tel" id="phone" name="phone" placeholder="123-453-6783" [(ngModel)]="item.phonenumber" maxlength="12" required><br><br>
+    
+
+
+              <br><br>
+          
+
+
+
+
+              <ion-button type="submit">Submit</ion-button>
+
+            
+  </form>
+
+
+
+</ion-content>

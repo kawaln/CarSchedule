@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <a href="/home">
+        <img alt="Home" src="../../../../assets/images/carschedule.png" id="logo">
+     </a>
+    </ion-title>
+    <ion-button fill="solid" expand="black" color="dark" (click)="HomePage()">Home</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button fill="solid" expand="black" color="dark" (click)="Check()">Check</ion-button>
+</ion-content>
+
+<ion-content>
+  <li *ngFor="let d of dataItem">
+     
+      {{ d.time }} 
+      {{ d.date }} 
+      {{ d.carmodel }}
+      {{ d.service }}
+</li>
+</ion-content>

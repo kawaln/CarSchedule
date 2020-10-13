@@ -19,6 +19,18 @@ const routes: Routes = [
     path: 'reset',
     loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule)
   },
+  {
+    path: 'appointment',
+    loadChildren: () => import('./appointment/appointment.module').then( m => m.AppointmentPageModule)
+  },
+  {
+    path: 'homeadmin',
+    loadChildren: () => import('./homeadmin/homeadmin.module').then( m => m.HomeadminPageModule)
+  },
+  {
+    path: 'checkappointment',
+    loadChildren: () => import('./checkappointment/checkappointment.module').then( m => m.CheckappointmentPageModule)
+  },
 ];
 
 @NgModule({
