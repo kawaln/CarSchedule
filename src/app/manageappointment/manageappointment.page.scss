@@ -1,0 +1,33 @@
+ion-content {
+    div {
+      height: 100%;
+      width: 100%;
+    }
+
+  h1 {
+
+      font-family: "Lucida Console", Courier, monospace;
+    }
+   }
+img {
+
+  width: 180px;
+  top: 8px;
+  right: 16px;
+  align-items: right;
+
+
+}
+
+dt{
+  font-weight: bold;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:black;
+  height: 1px;
+}

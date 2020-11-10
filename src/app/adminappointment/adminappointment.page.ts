@@ -9,17 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Admin } from '../models/admin';
-declare var $: any;
+
 @Component({
-  selector: 'app-appointment',
-  templateUrl: './appointment.page.html',
-  styleUrls: ['./appointment.page.scss'],
+  selector: 'app-adminappointment',
+  templateUrl: './adminappointment.page.html',
+  styleUrls: ['./adminappointment.page.scss'],
 })
+export class AdminappointmentPage implements OnInit {
 
-export class AppointmentPage implements OnInit {
-
-  
+    
   item: Item = {     //Create Item Object
     drop: '',
     service: '',
@@ -33,7 +31,7 @@ export class AppointmentPage implements OnInit {
     email: ''
 
   }
-
+  
   timeArray = [
     {time : "08:00 AM - 10:00 AM"},
     {time : "10:00 AM - 12:00 PM"},
@@ -139,10 +137,6 @@ dataItem: Item[];
 UserEmail: string = '';
 
 
-admin: Observable<Admin[]>;
-adminCollection: AngularFirestoreCollection<Admin>;
-dataAdmin: Admin[];
-
   constructor(private appointmentService: AppointmentService,
      public afs: AngularFirestore, public alertController: AlertController,public afAuth: AngularFireAuth,private router: Router ) { }
 
@@ -233,14 +227,9 @@ onChange(car:string, isChecked: boolean) {
     carformat = carformat.replace("[", "").replace("\"", "").replace("]", "");
     this.item.service = carformat;
 
-    this.UserEmail = this.afAuth.auth.currentUser.email;
-
-    this.item.email = this.UserEmail
-
-
 
     if(this.item.phonenumber != null && this.item.date != '' && this.item.time != '' && this.item.carmake != ''
-    && this.item.carmodel != '' &&  this.item.caryear != '' && this.item.drop != ''){
+    && this.item.carmodel != '' &&  this.item.caryear != '' && this.item.drop != '' && this.item.email != ''){
 
       this.appointmentService.addItem(this.item);
       this.item.carmake= '';
@@ -263,7 +252,7 @@ onChange(car:string, isChecked: boolean) {
 
       await alert.present();  
 
-      this.router.navigate(['home']);
+      this.router.navigate(['homeadmin']);
 
 
     }
@@ -285,7 +274,9 @@ onChange(car:string, isChecked: boolean) {
 
   HomePage(){
  
-      this.router.navigate(['home']);
+      this.router.navigate(['homeadmin']);
   
 }
 }
+
+

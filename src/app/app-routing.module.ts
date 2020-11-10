@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'checkappointment',
     loadChildren: () => import('./checkappointment/checkappointment.module').then( m => m.CheckappointmentPageModule)
   },
+  {
+    path: 'manageappointment',
+    loadChildren: () => import('./manageappointment/manageappointment.module').then( m => m.ManageappointmentPageModule)
+  },
+  {
+    path: 'adminappointment',
+    loadChildren: () => import('./adminappointment/adminappointment.module').then( m => m.AdminappointmentPageModule)
+  },
 ];
 
 @NgModule({

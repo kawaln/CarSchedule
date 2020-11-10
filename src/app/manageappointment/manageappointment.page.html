@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <a href="/homeadmin">
+        <img alt="Home" src="../../../../assets/images/carschedule.png" id="logo">
+     </a>
+    </ion-title>
+    <ion-button fill="solid" expand="black" color="dark" (click)="HomePage()">Home</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <br>
+  <br>
+
+<div>
+ Date: <input id="appointment" type='date' (change)="selectChangeHandler($event)"  min='2012-12-12'>
+<br>
+<br>
+
+<dl *ngFor="let d of dataItem">
+  <hr>
+  <dt>Time</dt>
+  <dd>{{ d.time }} </dd>
+  <dt>Car Make</dt>
+  <dd>{{ d.carmake }}</dd>
+  <dt>Car Model</dt>
+  <dd>{{ d.carmodel }}</dd>
+  <dt>Car Year</dt>
+  <dd>{{ d.caryear }}</dd>
+  <dt>Service</dt>
+  <dd>{{ d.service }}</dd>
+  <dt>Comments</dt>
+  <dd>{{ d.comment}}</dd>
+  <dt>Drop Off Vehicle</dt>
+  <dd>{{ d.drop }}</dd>
+  <dt>Phone Number</dt>
+  <dd>{{ d.phonenumber}}</dd>
+  <dt>Email Address</dt>
+  <dd>{{ d.email}}</dd>
+
+  <ion-button fill="solid" expand="black" color="danger" (click)="deleteAppointment($event, d)">Delete</ion-button>
+  
+</dl>
+</div>
+</ion-content>
